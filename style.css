@@ -318,3 +318,50 @@ footer a:hover { color: var(--fg); text-decoration: underline; text-decoration-c
 .earlier summary:hover { color: var(--fg); border-color: var(--accent); }
 
 .earlier ul { margin-top: 1rem; }
+
+/* Substack embed */
+.subscribe { margin: 0 0 2.5rem; }
+
+.subscribe iframe {
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: 320px;
+  border: 1px solid var(--rule);
+  border-radius: 24px 0 24px 0;
+  background: #fff;
+}
+
+/* Substack posts */
+.posts .post {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.posts .post:last-child { border-bottom: 1px solid var(--rule); }
+
+.post-image { display: block; }
+
+.post-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 60%;
+  filter: grayscale(1);
+  border-radius: 28px 0 28px 0;
+}
+
+.post-text .title { font-weight: 600; margin: 0 0 0.5rem; }
+.post-text p { margin: 0 0 0.5rem; }
+.post-text .meta { color: var(--muted); font-size: 0.9rem; margin: 0; }
+
+@media (max-width: 480px) {
+  .posts .post { grid-template-columns: 1fr; gap: 1rem; }
+  .post-image { width: 55%; max-width: 200px; }
+}
